@@ -29,4 +29,14 @@ class Posts extends Component {
         )
     }
 }
-export default connect(null, {fetchPosts})(Posts);
+
+
+
+//mapstatetoprops to get current state
+//posts same as in reducer posts
+//mapped items of state to posts property
+const mapStateToProps = state => ({
+    posts: state.posts.items
+});
+
+export default connect(mapStateToProps, {fetchPosts})(Posts);
